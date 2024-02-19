@@ -1,13 +1,5 @@
-# Aplicación NextJS
+# Solución a Prueba DWES Temas 5, 6 y 7 (bis)
 
-Esta aplicación realiza las operaciones CRUD usando el ORM Prisma.
+[Enunciado de la prueba](Enunciado_Prueba.pdf)
 
-En el esquema se declaran 2 modelos:
-
-- Articulo
-- Proveedor
-
-Entre ambos existe una relación N:M (muchos a muchos).
-
-Esta aplicación también permite gestionar los proveedores asociados a los artículos.
 
