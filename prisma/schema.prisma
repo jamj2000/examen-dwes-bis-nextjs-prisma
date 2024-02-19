@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+// datasource db {
+//   provider  = "postgresql"
+//   url  	    = env("DATABASE_URL")  
+//   directUrl = env("DIRECT_URL")
+// }
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL") 
+}
+
+
+model Alumno {
+  id                Int       @id @default(autoincrement())
+  nombre            String
+  localidad         String
+  fechaNacimiento   DateTime? 
+  createdAt         DateTime  @default(now()) 
+  updatedAt         DateTime  @updatedAt
+  profesores        Profesor[]
+
+  @@map("alumnos")
+}
+
+model Profesor {
+  id           Int       @id @default(autoincrement())
+  nombre       String
+  especialidad String
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  alumnos      Alumno[]
+
+  @@map("profesores")
+}
+
